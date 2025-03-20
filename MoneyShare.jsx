@@ -1,13 +1,4 @@
-import {
-  View,
-  Text,
-  Image,
-  TextInput,
-  StyleSheet,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  Keyboard,
-} from "react-native";
+import { View, Text, Image, TextInput, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Keyboard} from "react-native";
 import React, { useState } from "react";
 import CheckBox from "expo-checkbox";
 
