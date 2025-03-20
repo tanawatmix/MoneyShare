@@ -1,23 +1,32 @@
-import { View, Text, Image, TextInput, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Keyboard } from 'react-native';
-import React, { useState } from 'react';
-import CheckBox from 'expo-checkbox';
+import {
+  View,
+  Text,
+  Image,
+  TextInput,
+  StyleSheet,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from "react-native";
+import React, { useState } from "react";
+import CheckBox from "expo-checkbox";
 
 const MoneyShare = () => {
-  const [money, setMoney] = useState('');
-  const [people, setPeople] = useState('');
-  const [tip, setTip] = useState('');
+  const [money, setMoney] = useState("");
+  const [people, setPeople] = useState("");
+  const [tip, setTip] = useState("");
   const [tipStatus, setTipStatus] = useState(false);
-  const [moneyShare, setMoneyShare] = useState('0.00');
+  const [moneyShare, setMoneyShare] = useState("0.00");
 
   // Function to calculate money share
   const calMoneyShare = () => {
     // Validate inputs
-    if (money === '' || people === '') {
-      alert('กรุณาป้อนจำนวนเงินและจำนวนคน');
+    if (money === "" || people === "") {
+      alert("กรุณาป้อนจำนวนเงินและจำนวนคน");
       return;
     }
-    if (tipStatus && tip === '') {
-      alert('กรุณาป้อนจำนวนทิป');
+    if (tipStatus && tip === "") {
+      alert("กรุณาป้อนจำนวนทิป");
       return;
     }
 
@@ -27,7 +36,7 @@ const MoneyShare = () => {
     const t = tipStatus ? parseFloat(tip) : 0;
 
     if (p === 0) {
-      alert('จำนวนคนต้องมากกว่า 0');
+      alert("จำนวนคนต้องมากกว่า 0");
       return;
     }
 
@@ -41,7 +50,7 @@ const MoneyShare = () => {
         <View style={styles.appbar}>
           <Text style={styles.appbarText}>Money Share</Text>
         </View>
-        <Image source={require('./assets/twice.png')} style={styles.showLogo} />
+        <Image source={require("./assets/twice.png")} style={styles.showLogo} />
         <TextInput
           value={money}
           onChangeText={setMoney}
@@ -57,6 +66,7 @@ const MoneyShare = () => {
           keyboardType="numeric"
         />
         <View style={styles.checkboxContainer}>
+          {" "}
           <CheckBox value={tipStatus} onValueChange={setTipStatus} />
           <Text style={styles.checkboxLabel}>ทิปพนักงาน</Text>
         </View>
@@ -84,24 +94,24 @@ export default MoneyShare;
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    height: '100%',
-    alignItems: 'center',
+    width: "100%",
+    height: "100%",
+    alignItems: "center",
   },
   appbar: {
-    flexDirection: 'row',
-    backgroundColor: 'red',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "row",
+    backgroundColor: "red",
+    alignItems: "center",
+    justifyContent: "center",
     height: 50,
-    width: '100%',
+    width: "100%",
     borderBottomWidth: 1,
-    borderBottomColor: 'black',
+    borderBottomColor: "black",
   },
   appbarText: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   showLogo: {
     width: 150,
@@ -109,7 +119,7 @@ const styles = StyleSheet.create({
     marginVertical: 50,
   },
   inputnumber: {
-    width: '80%',
+    width: "80%",
     height: 50,
     borderWidth: 1,
     borderRadius: 5,
@@ -117,33 +127,33 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   checkboxContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     marginBottom: 20,
   },
   checkboxLabel: {
     marginLeft: 10,
   },
   btnCal: {
-    width: '80%',
+    width: "80%",
     height: 50,
-    backgroundColor: 'green',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: "green",
+    justifyContent: "center",
+    alignItems: "center",
     borderRadius: 5,
     marginBottom: 30,
   },
   btnCalText: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 20,
   },
   resultLabel: {
     fontSize: 18,
   },
   resultValue: {
-    color: 'green',
+    color: "green",
     fontSize: 60,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   resultUnit: {
     fontSize: 18,
