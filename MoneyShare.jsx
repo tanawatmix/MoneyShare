@@ -51,13 +51,13 @@ const MoneyShare = () => {
         />
         <TextInput
           value={people}
-          onChangeText={setPeople}
+          onChangeText={(value) => setPeople(value.replace(/[^0-9]/g, ""))}
           placeholder="ป้อนจำนวนคน"
           style={styles.inputnumber}
           keyboardType="numeric"
         />
         <View style={styles.checkboxContainer}>
-          {" "}
+          
           <CheckBox value={tipStatus} onValueChange={setTipStatus} />
           <Text style={styles.checkboxLabel}>ทิปพนักงาน</Text>
         </View>
